@@ -1,0 +1,10 @@
+name: PR-Alert
+
+on: [pull_request]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Send chat message
+      run: curl -X POST -H 'Content-Type: application/json' https://chat.googleapis.com/v1/spaces/AAAAKbqRKEk/messages\?key\=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI\&token\=mYMCkANsg2ka3OuwWCp7S_60wurK_D31oK815XtiTSk%3D -d '{"text": "Hello from GitHub!"}'
