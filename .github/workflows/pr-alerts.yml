@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Send chat message
-      run: curl -X POST -H 'Content-Type: application/json' 
+      run: curl -X POST -H "Content-Type: application/json" 
