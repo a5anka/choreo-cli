@@ -7,6 +7,9 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+    
+    - name: Build
+      run: echo "Hello GitHub"
 
     - name: Set up Go 1.13
       uses: actions/setup-go@v1
@@ -24,7 +27,7 @@ jobs:
         go get -v -t -d ./...
 
     - name: Build
-      run: make build-cli && make test
+      run: make build-cli
 
     - name: Tests results
       run: make test
