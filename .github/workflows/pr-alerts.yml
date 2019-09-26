@@ -1,6 +1,6 @@
 name: PR-Alert-Test
 on:
-  [push, pull_request]
+  [pull_request]
 jobs:
 
   build:
