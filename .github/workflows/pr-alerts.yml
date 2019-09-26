@@ -1,10 +1,13 @@
 name: PR-Alert
-
-on: [pull_request]
-
+on:
+  pull_request:
+    types: [opened, reopened]
 jobs:
-  greeting:
+
+  build:
+    name: Chat Bot
     runs-on: ubuntu-latest
     steps:
-    - name: Send chat message
-      run: curl -X POST 
+      - name: Send chat message
+        run: |
+          curl -sS --output /dev/null -X POST -H 'Content-Type: application/json' -d '{"text": "New PR - ${{ github.event.pull_request._links.html.href }} "}' || echo "Sending PR alerts failed"
